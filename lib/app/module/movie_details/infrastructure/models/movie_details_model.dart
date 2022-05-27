@@ -10,7 +10,7 @@ class MovieDetailsModel extends MovieDetails {
     required String poster,
     required String score,
     required int duracao,
-    required List<String> generos,
+    required List<Map<String, dynamic>> generos,
     required String sitemovie,
   }) : super(
           id: id,

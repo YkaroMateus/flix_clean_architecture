@@ -7,7 +7,7 @@ class MovieDetails {
   final String poster;
   final String score;
   final int runtime;
-  final List<String> genres;
+  final List<Map<String, dynamic>> genres;
   final String site;
 
   MovieDetails({
