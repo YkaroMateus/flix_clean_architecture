@@ -30,6 +30,7 @@ dependencies:
   flutter_modular: ^5.0.2
   dio: ^4.0.6
   dartz: ^0.10.1
+  bloc: ^8.0.3
   flutter:
     sdk: flutter
 
