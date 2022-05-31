@@ -1,14 +1,14 @@
 import 'package:bloc/bloc.dart';
 import 'package:flix_clean_ark/app/module/most_popular_movies/domain/usecases/get_most_popular_movies.dart';
-import 'package:flix_clean_ark/app/module/most_popular_movies/presenter/blocs/get_most_popular_movies_bloc/events/get_most_popular_movies_events.dart';
-import 'package:flix_clean_ark/app/module/most_popular_movies/presenter/blocs/get_most_popular_movies_bloc/states/get_most_popular_movies_failure_state.dart';
-import 'package:flix_clean_ark/app/module/most_popular_movies/presenter/blocs/get_most_popular_movies_bloc/states/get_most_popular_movies_loading_state.dart';
-import 'package:flix_clean_ark/app/module/most_popular_movies/presenter/blocs/get_most_popular_movies_bloc/states/get_most_popular_movies_states.dart';
-import 'package:flix_clean_ark/app/module/most_popular_movies/presenter/blocs/get_most_popular_movies_bloc/states/get_most_popular_movies_sucess_state.dart';
+import 'package:flix_clean_ark/app/module/most_popular_movies/presentation/blocs/get_most_popular_movies_bloc/states/get_most_popular_movies_failure_state.dart';
+import 'package:flix_clean_ark/app/module/most_popular_movies/presentation/blocs/get_most_popular_movies_bloc/states/get_most_popular_movies_loading_state.dart';
+import 'package:flix_clean_ark/app/module/most_popular_movies/presentation/blocs/get_most_popular_movies_bloc/states/get_most_popular_movies_states.dart';
+import 'package:flix_clean_ark/app/module/most_popular_movies/presentation/blocs/get_most_popular_movies_bloc/states/get_most_popular_movies_sucess_state.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../domain/failures/most_popular_movies_failure.dart';
 import 'events/get_most_popular_movies_event.dart';
+import 'events/get_most_popular_movies_events.dart';
 
 class GetMostPopularMoviesBloc extends Bloc<GetMostPopularMoviesEvents, GetMostPopularMoviesStates>
     implements Disposable {

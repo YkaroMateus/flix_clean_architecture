@@ -1,5 +1,6 @@
-import 'package:flix_clean_ark/app/module/most_popular_movies/presenter/pages/most_popular_movie_home_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+import 'most_popular_movies/presentation/pages/most_popular_movie_home_page.dart';
 
 class AppModule extends Module {
   @override
