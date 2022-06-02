@@ -1,31 +1,31 @@
 import 'package:dartz/dartz.dart';
-import 'package:flix_clean_ark/app/modules/film_filter/domain/entites/film_filter.dart';
-import 'package:flix_clean_ark/app/modules/film_filter/domain/failures/film_filter_failure.dart';
-import 'package:flix_clean_ark/app/modules/film_filter/domain/repositories/film_filter_repository.dart';
-import 'package:flix_clean_ark/app/modules/film_filter/domain/usecases/get_film_filter.dart';
+import 'package:flix_clean_ark/app/modules/filter_movies/domain/entites/filter_movies.dart';
+import 'package:flix_clean_ark/app/modules/filter_movies/domain/failures/filter_movies_failure.dart';
+import 'package:flix_clean_ark/app/modules/filter_movies/domain/repositories/filter_movies_repository.dart';
+import 'package:flix_clean_ark/app/modules/filter_movies/domain/usecases/get_filter_movies.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-class FilmFilterRepositoryMock extends Mock implements FilmFilterRepository {}
+class FilterMoviesRepositoryMock extends Mock implements FilterMoviesRepository {}
 
-class FilmFilterFake extends Fake implements FilmFilter {}
+class FilterMoviesFake extends Fake implements FilterMovies {}
 
 void main() {
-  final repository = FilmFilterRepositoryMock();
-  final usecase = GetFilmFilterImplementation(repository);
+  final repository = FilterMoviesRepositoryMock();
+  final usecase = GetFilterMoviesImplementation(repository);
 
-  test('Must return an FilmFilter entity on success', () async {
-    when(() => repository()).thenAnswer((invocation) async => Right(FilmFilterFake()));
+  test('Must return an FilterMovies entity on success', () async {
+    when(() => repository()).thenAnswer((invocation) async => Right(FilterMoviesFake()));
 
     final result = await usecase();
 
-    expect(result.fold(id, id), isA<FilmFilter>());
+    expect(result.fold(id, id), isA<FilterMovies>());
   });
-  test('Must return FilmFilterFailure on failure', () async {
-    when(() => repository()).thenAnswer((invocation) async => Left((FilmFilterFailure(message: 'Erro'))));
+  test('Must return FilterMoviesFailure on failure', () async {
+    when(() => repository()).thenAnswer((invocation) async => Left((FilterMoviesFailure(message: 'Erro'))));
 
     final result = await usecase();
 
-    expect(result.fold(id, id), isA<FilmFilterFailure>());
+    expect(result.fold(id, id), isA<FilterMoviesFailure>());
   });
 }
