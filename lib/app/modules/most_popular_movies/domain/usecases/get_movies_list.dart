@@ -7,10 +7,10 @@ abstract class GetMoviesList {
   Future<Either<Failure, MoviesList>> call();
 }
 
-class GetMovieListImplementation implements GetMoviesList {
+class GetMoviesListImplementation implements GetMoviesList {
   final MoviesListRepository repository;
 
-  GetMovieListImplementation(this.repository);
+  GetMoviesListImplementation(this.repository);
 
   @override
   Future<Either<Failure, MoviesList>> call() async {
