@@ -8,7 +8,11 @@ class MoviesListModel extends MoviesList {
 
   static MoviesListModel fromJson(Map<String, dynamic> json) {
     return MoviesListModel(
-      movies: ((json['results'] ?? []) as List).map((element) => MovieModel.fromJson(element)).toList(),
+      movies: ((json['results'] ?? []) as List)
+          .map(
+            (element) => MovieModel.fromJson(element),
+          )
+          .toList(),
     );
   }
 }
