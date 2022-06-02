@@ -1,5 +1,5 @@
-import 'get_movie_details_states.dart';
+import 'movie_details_states.dart';
 
-class GetMovieDetailsLoadingState implements GetMovieDetailsStates {
+class GetMovieDetailsLoadingState implements MovieDetailsStates {
   const GetMovieDetailsLoadingState();
 }

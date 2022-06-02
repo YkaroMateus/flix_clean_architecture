@@ -1,5 +1,5 @@
-import 'get_movie_details_events.dart';
+import 'movie_details_events.dart';
 
-class GetMovieDetailsEvent implements GetMovieDetailsEvents {
+class GetMovieDetailsEvent implements MovieDetailsEvents {
   const GetMovieDetailsEvent();
 }
