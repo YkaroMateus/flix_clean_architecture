@@ -7,23 +7,23 @@ class MovieDetailsModel extends MovieDetails {
     required int id,
     required String title,
     required String language,
-    required String datadelancamento,
+    required String releaseDate,
     required String overview,
     required String poster,
     required String score,
     required int duracao,
-    required List<MovieDetailsGenres> generos,
+    required List<MovieDetailsGenres> genres,
     required String sitemovie,
   }) : super(
           id: id,
           title: title,
           language: language,
-          releaseDate: datadelancamento,
+          releaseDate: releaseDate,
           overview: overview,
           poster: poster,
           score: score,
           runtime: duracao,
-          genres: generos,
+          genres: genres,
           site: sitemovie,
         );
 
@@ -32,12 +32,12 @@ class MovieDetailsModel extends MovieDetails {
         id: json['id'] ?? -1,
         title: json['title'] ?? '',
         language: json['original_language'] ?? '',
-        datadelancamento: json['release_date'] ?? '',
+        releaseDate: json['release_date'] ?? '',
         overview: json['overview'] ?? '',
         poster: json['poster_path'] ?? '',
         score: (json['vote_average'] ?? -1).toString(),
         duracao: json['runtime'] ?? -1,
-        generos: ((json['genres'] ?? []) as List)
+        genres: ((json['genres'] ?? []) as List)
             .map((element) => MovieDetailsGenresModel.fromJson(element))
             .toList(),
         sitemovie: json['homepage']);
