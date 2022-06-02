@@ -12,7 +12,7 @@ class MoviesListFake extends Fake implements MoviesList {}
 
 void main() {
   final repository = MoviesListRepositoryMock();
-  final usecase = GetMovieListImplementation(repository);
+  final usecase = GetMoviesListImplementation(repository);
 
   test('Must return an MoviesList entity on success', () async {
     when(() => repository()).thenAnswer((invocation) async => Right(MoviesListFake()));
