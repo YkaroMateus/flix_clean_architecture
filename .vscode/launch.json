@@ -5,9 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "flix_clean_ark",
+            "name": "Flutter: Run all Tests",
+            "type": "dart",
             "request": "launch",
-            "type": "dart"
+            "program": "./test/"
         },
     ]
 }

@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:flix_clean_ark/app/modules/filter_movies/domain/entites/filter_movies.dart';
-import 'package:flix_clean_ark/app/modules/filter_movies/external/datasource/filter_movies_datasource_implementation.dart';
-import 'package:flix_clean_ark/app/modules/filter_movies/infrastructure/errors/filter_movies_datasource_error.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/filter_movies/domain/entites/filter_movies.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/filter_movies/external/datasource/filter_movies_datasource_implementation.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/filter_movies/infrastructure/errors/filter_movies_datasource_error.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

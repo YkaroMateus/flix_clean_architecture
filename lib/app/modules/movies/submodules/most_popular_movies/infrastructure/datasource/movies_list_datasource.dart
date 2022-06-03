@@ -1,0 +1,5 @@
+import '../../domain/entites/movies_list.dart';
+
+abstract class MoviesListDatasource {
+  Future<MoviesList> call();
+}

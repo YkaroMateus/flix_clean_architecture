@@ -1,10 +1,10 @@
 import 'package:dartz/dartz.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/domain/entites/movie_details_parameters.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/domain/failures/movie_details_failure.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/infrastructure/datasource/movie_details_datasource.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/infrastructure/errors/movie_details_datasource_error.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/infrastructure/models/movie_details_model.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/infrastructure/repositories/movie_details_repository_implementation.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domain/entites/movie_details_parameters.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domain/failures/movie_details_failure.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/infrastructure/datasource/movie_details_datasource.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/infrastructure/errors/movie_details_datasource_error.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/infrastructure/models/movie_details_model.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/infrastructure/repositories/movie_details_repository_implementation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

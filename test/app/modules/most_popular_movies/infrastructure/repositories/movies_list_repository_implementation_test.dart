@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:flix_clean_ark/app/modules/most_popular_movies/domain/entites/movies_list.dart';
-import 'package:flix_clean_ark/app/modules/most_popular_movies/domain/failures/movies_list_failure.dart';
-import 'package:flix_clean_ark/app/modules/most_popular_movies/infrastructure/datasource/movies_list_datasource.dart';
-import 'package:flix_clean_ark/app/modules/most_popular_movies/infrastructure/errors/movies_list_datasource_error.dart';
-import 'package:flix_clean_ark/app/modules/most_popular_movies/infrastructure/repositories/movies_list_repository_implementation.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/domain/entites/movies_list.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/domain/failures/movies_list_failure.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/infrastructure/datasource/movies_list_datasource.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/infrastructure/errors/movies_list_datasource_error.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/infrastructure/repositories/movies_list_repository_implementation.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

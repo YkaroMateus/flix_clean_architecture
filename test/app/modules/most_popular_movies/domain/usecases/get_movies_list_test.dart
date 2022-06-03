@@ -1,8 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:flix_clean_ark/app/modules/most_popular_movies/domain/entites/movies_list.dart';
-import 'package:flix_clean_ark/app/modules/most_popular_movies/domain/failures/movies_list_failure.dart';
-import 'package:flix_clean_ark/app/modules/most_popular_movies/domain/repositories/movies_list_repository.dart';
-import 'package:flix_clean_ark/app/modules/most_popular_movies/domain/usecases/get_movies_list.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/domain/entites/movies_list.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/domain/failures/movies_list_failure.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/domain/repositories/movies_list_repository.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/domain/usecases/get_movies_list.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 

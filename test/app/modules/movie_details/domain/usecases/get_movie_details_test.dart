@@ -1,9 +1,9 @@
 import 'package:dartz/dartz.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/domain/entites/movie_details.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/domain/entites/movie_details_parameters.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/domain/failures/movie_details_failure.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/domain/repositories/movie_details_repository.dart';
-import 'package:flix_clean_ark/app/modules/movie_details/domain/usecases/get_movie_details.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domain/entites/movie_details.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domain/entites/movie_details_parameters.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domain/failures/movie_details_failure.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domain/repositories/movie_details_repository.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domain/usecases/get_movie_details.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
