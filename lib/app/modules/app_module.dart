@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/most_popular_movies_module.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'movies/submodules/most_popular_movies/presentation/pages/most_popular_movie_home_page.dart';
 
 class AppModule extends Module {
   @override
@@ -10,6 +10,6 @@ class AppModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute("/MostPopularMoviesModule", child: (context, args) => MostPopularMoviesHomePage()),
+    ModuleRoute("/MostPopularMoviesModule", module: MostPopularMoviesModule()),
   ];
 }

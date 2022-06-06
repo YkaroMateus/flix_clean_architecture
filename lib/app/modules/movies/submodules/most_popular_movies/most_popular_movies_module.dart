@@ -1,3 +1,4 @@
+import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/presentation/pages/most_popular_movie_home_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'domain/usecases/get_movies_list.dart';
@@ -14,6 +15,6 @@ class MostPopularMoviesModule extends Module {
 
   @override
   final List<ModularRoute> routes = [
-    ChildRoute("/", child: (context, args) => SizedBox()),
+    ChildRoute("/", child: (context, args) => MostPopularMoviesHomePage()),
   ];
 }

@@ -10,7 +10,7 @@ import 'package:flutter_modular/flutter_modular.dart';
 import '../blocs/get_movies_list/most_popular_movies_bloc.dart';
 
 class MostPopularMoviesHomePage extends StatefulWidget {
-  const MostPopularMoviesHomePage({Key? key}) : super(key: key);
+  const MostPopularMoviesHomePage();
 
   @override
   State<MostPopularMoviesHomePage> createState() => _ModuleMostPopularMoviesState();
@@ -128,124 +128,126 @@ class _ModuleMostPopularMoviesState extends State<MostPopularMoviesHomePage> {
               // ),
               Expanded(
                 child: BlocBuilder<MostPopularMoviesBloc, MostPopularMoviesStates>(
-                    bloc: mostPopularMoviesBloc,
-                    builder: (context, state) {
-                      if (state is GetMoviesListSucessState) {
-                        return ListView.builder(
-                          itemCount: state.movieList.movies.length,
-                          itemBuilder: (context, position) {
-                            return Card(
-                              color: Colors.transparent,
-                              child: InkWell(
-                                splashColor: Color.fromARGB(255, 19, 3, 252).withAlpha(30),
-                                onTap: () {
-                                  // Navigator.push(context,
-                                  //     MaterialPageRoute(builder: ((context) => Apifuntion(data[position].id))));
-                                },
-                                child: Padding(
-                                  padding: const EdgeInsets.all(8),
-                                  child: Row(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Image.network(
-                                        '${MoviesSettings.moviePosterUrl}${state.movieList.movies[position].poster}',
-                                        width: 150,
-                                        height: 200,
-                                        fit: BoxFit.cover,
-                                      ),
-                                      Padding(
-                                        padding: const EdgeInsets.only(left: 12),
-                                        child: Column(
-                                          crossAxisAlignment: CrossAxisAlignment.start,
-                                          children: [
-                                            SizedBox(
-                                              width: MediaQuery.of(context).size.width * 0.52,
-                                              child: Text(
-                                                state.movieList.movies[position].title,
-                                                maxLines: 2,
-                                                overflow: TextOverflow.ellipsis,
-                                                style: TextStyle(
-                                                    color: Colors.white,
-                                                    fontSize: 24,
-                                                    fontWeight: FontWeight.bold),
-                                              ),
-                                            ),
-                                            Text(
-                                              state.movieList.movies[position].releaseDate,
+                  bloc: mostPopularMoviesBloc,
+                  builder: (context, state) {
+                    if (state is GetMoviesListSucessState) {
+                      return ListView.builder(
+                        itemCount: state.movieList.movies.length,
+                        itemBuilder: (context, position) {
+                          return Card(
+                            color: Colors.transparent,
+                            child: InkWell(
+                              splashColor: Color.fromARGB(255, 19, 3, 252).withAlpha(30),
+                              onTap: () {
+                                // Navigator.push(context,
+                                //     MaterialPageRoute(builder: ((context) => Apifuntion(data[position].id))));
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.all(8),
+                                child: Row(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Image.network(
+                                      '${MoviesSettings.moviePosterUrl}${state.movieList.movies[position].poster}',
+                                      width: 150,
+                                      height: 200,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Padding(
+                                      padding: const EdgeInsets.only(left: 12),
+                                      child: Column(
+                                        crossAxisAlignment: CrossAxisAlignment.start,
+                                        children: [
+                                          SizedBox(
+                                            width: MediaQuery.of(context).size.width * 0.52,
+                                            child: Text(
+                                              state.movieList.movies[position].title,
+                                              maxLines: 2,
+                                              overflow: TextOverflow.ellipsis,
                                               style: TextStyle(
                                                   color: Colors.white,
-                                                  fontWeight: FontWeight.bold,
-                                                  fontSize: 16,
-                                                  fontStyle: FontStyle.italic),
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold),
                                             ),
-                                            SizedBox(
-                                              height: 7,
+                                          ),
+                                          Text(
+                                            state.movieList.movies[position].releaseDate,
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 16,
+                                                fontStyle: FontStyle.italic),
+                                          ),
+                                          SizedBox(
+                                            height: 7,
+                                          ),
+                                          SizedBox(
+                                            width: MediaQuery.of(context).size.width * 0.52,
+                                            child: Text(
+                                              state.movieList.movies[position].overview,
+                                              maxLines: 6,
+                                              overflow: TextOverflow.ellipsis,
+                                              style: TextStyle(fontSize: 15, color: Colors.white),
                                             ),
-                                            SizedBox(
-                                              width: MediaQuery.of(context).size.width * 0.52,
-                                              child: Text(
-                                                state.movieList.movies[position].overview,
-                                                maxLines: 6,
-                                                overflow: TextOverflow.ellipsis,
-                                                style: TextStyle(fontSize: 15, color: Colors.white),
+                                          ),
+                                          SizedBox(height: 7),
+                                          Row(
+                                            children: [
+                                              Icon(
+                                                Icons.star,
+                                                color: Colors.yellow,
                                               ),
-                                            ),
-                                            SizedBox(height: 7),
-                                            Row(
-                                              children: [
-                                                Icon(
-                                                  Icons.star,
-                                                  color: Colors.yellow,
-                                                ),
-                                                Text(
-                                                  state.movieList.movies[position].score,
-                                                  style: TextStyle(
-                                                      color: Colors.white,
-                                                      fontSize: 16,
-                                                      fontWeight: FontWeight.bold),
-                                                ),
-                                              ],
-                                            ),
-                                          ],
-                                        ),
+                                              Text(
+                                                state.movieList.movies[position].score,
+                                                style: TextStyle(
+                                                    color: Colors.white,
+                                                    fontSize: 16,
+                                                    fontWeight: FontWeight.bold),
+                                              ),
+                                            ],
+                                          ),
+                                        ],
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                            );
-                          },
-                        );
-                      }
-                      if (state is GetMoviesListLoadingState) {
-                        return Center(child: const CircularProgressIndicator());
-                      }
+                            ),
+                          );
+                        },
+                      );
+                    }
+                    if (state is GetMoviesListLoadingState) {
+                      return Center(child: const CircularProgressIndicator());
+                    }
 
-                      if (state is GetMoviesListFailureState) {
-                        return Center(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Container(
-                                child: Icon(Icons.error, size: 48, color: Colors.white),
-                              ),
-                              Text(
-                                state.failure.message,
-                                style: TextStyle(color: Colors.white, fontSize: 24),
-                              ),
-                              ElevatedButton(
-                                onPressed: () {
-                                  mostPopularMoviesBloc.add(
-                                    GetMostPopularMoviesEvent(),
-                                  );
-                                },
-                                child: Text('Tentar novamente'),
-                              ),
-                            ],
-                          ),
-                        );
-                      }
-                    }),
+                    if (state is GetMoviesListFailureState) {
+                      return Center(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Container(
+                              child: Icon(Icons.error, size: 48, color: Colors.white),
+                            ),
+                            Text(
+                              state.failure.message,
+                              style: TextStyle(color: Colors.white, fontSize: 24),
+                            ),
+                            ElevatedButton(
+                              onPressed: () {
+                                mostPopularMoviesBloc.add(
+                                  GetMostPopularMoviesEvent(),
+                                );
+                              },
+                              child: Text('Tentar novamente'),
+                            ),
+                          ],
+                        ),
+                      );
+                    }
+                    return Container();
+                  },
+                ),
               ),
             ],
           ),
