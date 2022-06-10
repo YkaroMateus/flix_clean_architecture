@@ -40,6 +40,6 @@ class MovieDetailsModel extends MovieDetails {
         genres: ((json['genres'] ?? []) as List)
             .map((element) => MovieDetailsGenresModel.fromJson(element))
             .toList(),
-        sitemovie: json['homepage']);
+        sitemovie: json['homepage'] ?? '');
   }
 }
