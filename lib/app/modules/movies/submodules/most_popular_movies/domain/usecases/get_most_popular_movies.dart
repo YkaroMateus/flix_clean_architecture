@@ -1,16 +1,16 @@
 import 'package:dartz/dartz.dart';
 import 'package:flix_clean_ark/app/core/errors/failure.dart';
 import '../entites/movies_list.dart';
-import '../repositories/movies_list_repository.dart';
+import '../repositories/most_popular_movies_repository.dart';
 
-abstract class GetMoviesList {
+abstract class GetMostPopularMovies {
   Future<Either<Failure, MoviesList>> call();
 }
 
-class GetMoviesListImplementation implements GetMoviesList {
-  final MoviesListRepository repository;
+class GetMostPopularMoviesImplementation implements GetMostPopularMovies {
+  final MostPopularMoviesRepository repository;
 
-  GetMoviesListImplementation(this.repository);
+  GetMostPopularMoviesImplementation(this.repository);
 
   @override
   Future<Either<Failure, MoviesList>> call() async {
