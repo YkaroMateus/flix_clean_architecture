@@ -17,7 +17,6 @@ class MovieDetailsParametersMock extends Mock implements MovieDetailsParameters 
 void main() {
   setUp(() {
     registerFallbackValue(MovieDetailsParametersMock());
-    registerFallbackValue(ResquestOptionsFake());
   });
   final dio = DioMock();
   final datasource = MovieDetailsDatasourceImplementation(dio);
