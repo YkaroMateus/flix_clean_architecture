@@ -1,4 +1,4 @@
-const moviesListSucessResponse = {
+const mostPopularMoviesSucessResponse = {
   "page": 1,
   "results": [
     {
