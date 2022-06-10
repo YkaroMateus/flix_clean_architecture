@@ -1,5 +1,5 @@
 import '../../domain/entites/movies_list.dart';
 
-abstract class MoviesListDatasource {
+abstract class MostPopularMoviesDatasource {
   Future<MoviesList> call();
 }
