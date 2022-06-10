@@ -4,7 +4,7 @@ import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domai
 import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domain/failures/movie_details_failure.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/domain/usecases/get_movie_details.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/events/get_movie_details_event.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/movie_details_bloc.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/get_movie_details_bloc.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/states/get_movie_details_failure_state.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/states/get_movie_details_loading_state.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/states/get_movie_details_sucess_state.dart';
@@ -23,7 +23,7 @@ void main() {
   });
 
   final usecase = GetMovieDetailsMock();
-  final bloc = MovieDetailsBloc(usecase);
+  final bloc = GetMovieDetailsBloc(usecase);
 
   final parameters = MovieDetailsParameters(123);
 
