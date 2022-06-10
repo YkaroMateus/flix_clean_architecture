@@ -1,18 +1,12 @@
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/entites/search.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/entites/search_movies_parameters.dart';
 
 abstract class SearchMoviesValidators {
-  bool hasSearch(Search parameters);
+  bool hasSearch(SearchMoviesParameters parameters);
 }
 
 class SearchMoviesValidatorsImplementation implements SearchMoviesValidators {
   @override
-  bool hasSearch(Search parameters) {
-    // if (parameters.query.isNotEmpty) {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
-
+  bool hasSearch(SearchMoviesParameters parameters) {
     return parameters.query.isNotEmpty;
   }
 }
