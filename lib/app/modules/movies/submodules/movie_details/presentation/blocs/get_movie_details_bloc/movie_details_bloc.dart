@@ -3,17 +3,16 @@ import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/prese
 import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/states/get_movie_details_sucess_state.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/states/movie_details_states.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import '../../../domain/entites/movie_details_parameters.dart';
 import '../../../domain/failures/movie_details_failure.dart';
 import '../../../domain/usecases/get_movie_details.dart';
 import 'events/get_movie_details_event.dart';
 import 'events/movie_details_events.dart';
 import 'states/get_movie_details_failure_state.dart';
 
-class GetMovieDetailsBloc extends Bloc<MovieDetailsEvents, MovieDetailsStates> implements Disposable {
+class MovieDetailsBloc extends Bloc<MovieDetailsEvents, MovieDetailsStates> implements Disposable {
   final GetMovieDetails usecase;
-  final MovieDetailsParameters parameters;
-  GetMovieDetailsBloc(this.usecase, this.parameters) : super(GetMovieDetailsLoadingState()) {
+
+  MovieDetailsBloc(this.usecase) : super(GetMovieDetailsLoadingState()) {
     on<GetMovieDetailsEvent>(_mapGetMovieDetailsEventToState);
   }
 
@@ -25,7 +24,7 @@ class GetMovieDetailsBloc extends Bloc<MovieDetailsEvents, MovieDetailsStates> i
   void _mapGetMovieDetailsEventToState(GetMovieDetailsEvent event, Emitter<MovieDetailsStates> emit) async {
     emit(GetMovieDetailsLoadingState());
 
-    final result = await usecase(parameters);
+    final result = await usecase(event.parameters);
 
     result.fold(
       (l) {

@@ -17,12 +17,14 @@ void main() {
   setUp(() {
     registerFallbackValue(MovieDetailsParametersMock());
   });
-  final parameters = MovieDetailsParametersMock();
+
   final repository = MovieDetailsRepositoryMock();
   final usecase = GetMovieDetailsImplementation(repository);
 
+  final parameters = MovieDetailsParameters(123);
+
   test('Must return an MovieDetails entity on success', () async {
-    when(() => repository(parameters)).thenAnswer((invocation) async => Right(MovieDetailsFake()));
+    when(() => repository(any())).thenAnswer((invocation) async => Right(MovieDetailsFake()));
 
     final result = await usecase(parameters);
 
@@ -30,7 +32,7 @@ void main() {
   });
 
   test('Must return MovieDetailsFailure on Failure', () async {
-    when(() => repository(parameters))
+    when(() => repository(any()))
         .thenAnswer((invocation) async => Left(MovieDetailsFailure(message: 'Ocorreu um erro!')));
 
     final result = await usecase(parameters);

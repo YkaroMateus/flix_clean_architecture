@@ -21,10 +21,11 @@ void main() {
 
   final datasource = MovieDetailsDatasourceMock();
   final repository = MovieDetailsRepositoryImplementation(datasource);
-  final parameters = MovieDetailsParametersMock();
+
+  final parameters = MovieDetailsParameters(123);
 
   test('Must return an MostPopularMoviesModel on success', () async {
-    when(() => datasource(parameters)).thenAnswer((invocation) async => MovieDetailsModelFake());
+    when(() => datasource(any())).thenAnswer((invocation) async => MovieDetailsModelFake());
 
     final result = await repository(parameters);
 
@@ -32,7 +33,7 @@ void main() {
   });
 
   test('Must return an MovieDetailsFailure on MovieDetailsDatasourceError', () async {
-    when(() => datasource(parameters)).thenThrow(MovieDetailsDatasourceError(message: 'erro'));
+    when(() => datasource(any())).thenThrow(MovieDetailsDatasourceError(message: 'erro'));
 
     final result = await repository(parameters);
 
@@ -40,7 +41,7 @@ void main() {
   });
 
   test('Must return an MovieDetailsFailure on Exception', () async {
-    when(() => datasource(parameters)).thenThrow(Exception());
+    when(() => datasource(any())).thenThrow(Exception());
 
     final result = await repository(parameters);
 

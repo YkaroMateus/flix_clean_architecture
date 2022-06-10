@@ -6,7 +6,7 @@ import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/infra
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'mock/movies_details_sucess_response.dart';
+import '../mock/movies_details_sucess_response.dart';
 
 class DioMock extends Mock implements Dio {}
 
@@ -21,12 +21,13 @@ void main() {
   });
   final dio = DioMock();
   final datasource = MovieDetailsDatasourceImplementation(dio);
-  final parameters = MovieDetailsParametersMock();
+
+  final parameters = MovieDetailsParameters(123);
 
   test("Must return an MovieDetailsModel on status code 200", () async {
-    when((() => dio.get(
+    when(() => dio.get(
               any(),
-            )))
+            ))
         .thenAnswer((invocation) async => Response(
             data: movieDetailsSucessRresponse, statusCode: 200, requestOptions: ResquestOptionsFake()));
 
@@ -34,14 +35,15 @@ void main() {
     expect(response, isA<MovieDetailsModel>());
   });
   test('Must return an MovieDetailsDatasourceError on any other status code', () async {
-    when((() => dio.get(any()))).thenAnswer(
+    when(() => dio.get(any())).thenAnswer(
         (invocation) async => Response(data: '', statusCode: 400, requestOptions: ResquestOptionsFake()));
 
     final result = datasource(parameters);
     expect(result, throwsA(isA<MovieDetailsDatasourceError>()));
   });
+
   test('Must throw Exception on dio error ', () async {
-    when((() => dio.get(any()))).thenThrow(Exception());
+    when(() => dio.get(any())).thenThrow(Exception());
 
     final result = datasource(parameters);
     expect(result, throwsA(isA<Exception>()));
