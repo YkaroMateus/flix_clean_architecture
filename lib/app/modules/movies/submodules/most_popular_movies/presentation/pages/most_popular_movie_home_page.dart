@@ -120,7 +120,7 @@ class _ModuleMostPopularMoviesState extends State<MostPopularMoviesHomePage> {
           ),
           IconButton(
             onPressed: (() {
-              Modular.to.pushNamed('/movies/movieDetails/');
+              Modular.to.pushNamed('');
             }),
             icon: Icon(
               Icons.filter_list_alt,
@@ -137,10 +137,6 @@ class _ModuleMostPopularMoviesState extends State<MostPopularMoviesHomePage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                Container(
-                  color: Colors.orange,
-                  height: 250,
-                ),
                 Expanded(
                   child: BlocBuilder<MostPopularMoviesBloc, MostPopularMoviesStates>(
                     bloc: mostPopularMoviesBloc,

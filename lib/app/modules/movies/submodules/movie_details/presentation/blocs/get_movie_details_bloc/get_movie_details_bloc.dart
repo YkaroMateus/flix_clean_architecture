@@ -9,10 +9,10 @@ import 'events/get_movie_details_event.dart';
 import 'events/movie_details_events.dart';
 import 'states/get_movie_details_failure_state.dart';
 
-class MovieDetailsBloc extends Bloc<MovieDetailsEvents, MovieDetailsStates> implements Disposable {
+class GetMovieDetailsBloc extends Bloc<MovieDetailsEvents, MovieDetailsStates> implements Disposable {
   final GetMovieDetails usecase;
 
-  MovieDetailsBloc(this.usecase) : super(GetMovieDetailsLoadingState()) {
+  GetMovieDetailsBloc(this.usecase) : super(GetMovieDetailsLoadingState()) {
     on<GetMovieDetailsEvent>(_mapGetMovieDetailsEventToState);
   }
 

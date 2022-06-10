@@ -1,4 +1,4 @@
-import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/movie_details_bloc.dart';
+import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/blocs/get_movie_details_bloc/get_movie_details_bloc.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/movie_details/presentation/pages/movie_details_page.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -12,7 +12,7 @@ class MovieDetailsModule extends Module {
     Bind((i) => GetMovieDetailsImplementation(i())),
     Bind((i) => MovieDetailsRepositoryImplementation(i())),
     Bind((i) => MovieDetailsDatasourceImplementation(i())),
-    Bind((i) => MovieDetailsBloc(i())),
+    Bind((i) => GetMovieDetailsBloc(i())),
   ];
 
   @override
