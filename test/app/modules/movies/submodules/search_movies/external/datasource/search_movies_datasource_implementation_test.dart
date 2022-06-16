@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
+import 'package:flix_clean_ark/app/modules/movies/domain/movies_list.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/entites/search_movies_parameters.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/external/datasource/search_movies_datasource_implementation.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/infrastructure/errors/search_movies_datasource_error.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/infrastructure/models/search_movies_list_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 
-import 'mock/search_movies_sucess_response.dart';
+import '../mock/search_movies_sucess_response.dart';
 
 class DioMock extends Mock implements Dio {}
 
@@ -35,7 +35,7 @@ void main() {
 
     final result = await datasource(parameters);
 
-    expect(result, isA<SearchMoviesListModel>());
+    expect(result, isA<MoviesList>());
   });
 
   test('Must throw an SearchMoviesDatasourceError on any other status code', () async {

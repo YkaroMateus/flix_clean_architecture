@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/domain/entites/movies_list.dart';
+import 'package:flix_clean_ark/app/modules/movies/domain/movies_list.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/domain/failures/most_popular_movies_failure.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/infrastructure/datasource/most_popular_movies_datasource.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/most_popular_movies/infrastructure/errors/most_popular_movies_datasource_error.dart';

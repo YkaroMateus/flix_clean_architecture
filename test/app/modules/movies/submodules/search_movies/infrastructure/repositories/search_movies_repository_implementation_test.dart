@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/entites/search_movies_list.dart';
+import 'package:flix_clean_ark/app/modules/movies/domain/movies_list.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/entites/search_movies_parameters.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/failures/movie_not_found_failure.dart';
 import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/failures/search_movies_failure.dart';
@@ -12,7 +12,7 @@ import 'package:mocktail/mocktail.dart';
 
 class SearchMoviesDatasourceMock extends Mock implements SearchMoviesDatasource {}
 
-class SearchMoviesListFake extends Fake implements SearchMoviesList {}
+class MoviesListFake extends Fake implements MoviesList {}
 
 void main() {
   final datasource = SearchMoviesDatasourceMock();
@@ -21,11 +21,11 @@ void main() {
   final parameters = SearchMoviesParameters('lala');
 
   test('Must return an SearchMoviesList on success', () async {
-    when(() => datasource(parameters)).thenAnswer((invocation) async => SearchMoviesListFake());
+    when(() => datasource(parameters)).thenAnswer((invocation) async => MoviesListFake());
 
     final result = await repository(parameters);
 
-    expect(result.fold(id, id), isA<SearchMoviesList>());
+    expect(result.fold(id, id), isA<MoviesList>());
   });
   test('Must throw a MovieNotFoundFailure on MovieNotFoundDatasourceError', () async {
     when(() => datasource(parameters)).thenThrow(MovieNotFoundDatasourceError(message: 'erro'));

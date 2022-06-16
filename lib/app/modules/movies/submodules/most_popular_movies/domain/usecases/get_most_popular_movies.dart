@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flix_clean_ark/app/core/errors/failure.dart';
-import '../entites/movies_list.dart';
+import '../../../../domain/movies_list.dart';
 import '../repositories/most_popular_movies_repository.dart';
 
 abstract class GetMostPopularMovies {

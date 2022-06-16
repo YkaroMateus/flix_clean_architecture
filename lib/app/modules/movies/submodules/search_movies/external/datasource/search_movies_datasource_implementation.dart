@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
-import 'package:flix_clean_ark/app/core/configuration/config.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/entites/search_movies_parameters.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/entites/search_movies_list.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/external/settings/search_movies_settings.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/infrastructure/datasource/search_movies_datasource.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/infrastructure/models/search_movies_list_model.dart';
-import 'package:flix_clean_ark/app/secrets.dart';
 
+import '../../../../../../core/configuration/config.dart';
+import '../../../../../../secrets.dart';
+import '../../../../domain/movies_list.dart';
+import '../../../../infrastructure/models/movies_list_model.dart';
+import '../../domain/entites/search_movies_parameters.dart';
+import '../../infrastructure/datasource/search_movies_datasource.dart';
 import '../../infrastructure/errors/search_movies_datasource_error.dart';
+import '../settings/search_movies_settings.dart';
 
 class SearchMoviesDatasourceImplementation implements SearchMoviesDatasource {
   final Dio dio;
@@ -15,12 +15,11 @@ class SearchMoviesDatasourceImplementation implements SearchMoviesDatasource {
   SearchMoviesDatasourceImplementation(this.dio);
 
   @override
-  Future<SearchMoviesList> call(SearchMoviesParameters parameters) async {
-    final response =
-        await dio.get("${Config.baseUrl}${SearchMoviesSettings.endpoint}${Secrets.apiKey}&query=$parameters");
-
+  Future<MoviesList> call(SearchMoviesParameters parameters) async {
+    final response = await dio.get(
+        '${Config.baseUrl}${SearchMoviesSettings.endpoint}?api_key=${Secrets.apiKey}&query=${parameters.query}');
     if (response.statusCode == 200) {
-      return SearchMoviesListModel.fromJson(response.data);
+      return MoviesListModel.fromJson(response.data);
     } else {
       throw SearchMoviesDatasourceError('Ocorreu um erro!');
     }

@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flix_clean_ark/app/core/errors/failure.dart';
-import '../../domain/entites/movies_list.dart';
+import '../../../../domain/movies_list.dart';
 import '../../domain/failures/most_popular_movies_failure.dart';
 import '../../domain/repositories/most_popular_movies_repository.dart';
 import '../datasource/most_popular_movies_datasource.dart';

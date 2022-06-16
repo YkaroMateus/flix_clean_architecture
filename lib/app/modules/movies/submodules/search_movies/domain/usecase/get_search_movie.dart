@@ -1,14 +1,13 @@
 import 'package:dartz/dartz.dart';
-import 'package:flix_clean_ark/app/core/errors/failure.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/entites/search_movies_list.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/entites/search_movies_parameters.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/failures/search_movies_failure.dart';
-import 'package:flix_clean_ark/app/modules/movies/submodules/search_movies/domain/validators/search_movies_validators.dart';
 
+import '../../../../../../core/errors/failure.dart';
+import '../../../../domain/movies_list.dart';
+import '../entites/search_movies_parameters.dart';
 import '../repositories/search_movies_repository.dart';
+import '../validators/search_movies_validators.dart';
 
 abstract class GetSearchMovie {
-  Future<Either<Failure, SearchMoviesList>> call(SearchMoviesParameters parameters);
+  Future<Either<Failure, MoviesList>> call(SearchMoviesParameters parameters);
 }
 
 class GetSearchMoviesImplementation implements GetSearchMovie {
@@ -18,11 +17,10 @@ class GetSearchMoviesImplementation implements GetSearchMovie {
   GetSearchMoviesImplementation(this.repository, this.validator);
 
   @override
-  Future<Either<Failure, SearchMoviesList>> call(SearchMoviesParameters parameters) async {
+  Future<Either<Failure, MoviesList>> call(SearchMoviesParameters parameters) async {
     if (validator.hasSearch(parameters)) {
       return await repository(parameters);
-    } else {
-      return Left(SearchMoviesFailure('Ocorreu um erro!'));
     }
+    return await repository(parameters);
   }
 }

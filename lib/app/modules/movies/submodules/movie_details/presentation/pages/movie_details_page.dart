@@ -235,7 +235,7 @@ class _MovieDetailsPageState extends State<MovieDetailsPage> {
                                                   label: Text(''),
                                                 ),
                                                 Text(
-                                                  ':( Sorry. \nNot Vailable for !',
+                                                  ':( Sorry. \nNot Available yet !',
                                                   textAlign: TextAlign.center,
                                                   style: TextStyle(
                                                     fontWeight: FontWeight.bold,

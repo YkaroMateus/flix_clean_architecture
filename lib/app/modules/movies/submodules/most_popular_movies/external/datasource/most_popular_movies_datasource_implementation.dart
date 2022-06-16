@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flix_clean_ark/app/secrets.dart';
 import '../../../../../../core/configuration/config.dart';
-import '../../domain/entites/movies_list.dart';
+import '../../../../domain/movies_list.dart';
 import '../../infrastructure/datasource/most_popular_movies_datasource.dart';
 import '../../infrastructure/errors/most_popular_movies_datasource_error.dart';
-import '../../infrastructure/models/movies_list_model.dart';
+import '../../../../infrastructure/models/movies_list_model.dart';
 import '../settings/most_popular_movies_settings.dart';
 
 class MostPopularMoviesDatasourceImplementation implements MostPopularMoviesDatasource {
